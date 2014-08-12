@@ -1,7 +1,6 @@
 //PALLEGA, DIOFEL S.
 //CSC 124 cs.1
-
-package quicksorting;
+ 
 
 import java.util.Random;
 
@@ -64,7 +63,7 @@ public static void main (String[] args) {
 	 
 		quicksorting test = new quicksorting();
 		Random ran = new Random();
-		int size = 4;
+		int size = 10;
 		int test1[] = new int [size];
 		
 		System.out.println("PALLEGA, DIOFEL S. ");
@@ -77,23 +76,23 @@ public static void main (String[] args) {
 			System.out.print(" " +test1[i]);
 		}
 		
-		long start1 = System.currentTimeMillis();
+		long start1 = System.nanoTime();
 		test.quicksort(test1, 0, size - 1);
-		long end1 = System.currentTimeMillis();
+		long end1 = System.nanoTime();
 		long total1 = end1 - start1;
 
 		System.out.println("\n\nSorted Random:");
 		printelements(test1);
-		System.out.println("\nTime: " + total1 + " ms");
+		System.out.println("\nTime: " + total1 + " ns");
 		
-		long start2 = System.currentTimeMillis();
+		long start2 = System.nanoTime();
 		test.quicksort(test1, 0, size - 1);
-		long end2 = System.currentTimeMillis();
+		long end2 = System.nanoTime();
 		long total2 = end2 - start2;
 
 		System.out.println("\nSorted Ascending:");
 		printelements(test1);
-		System.out.println("\nTime: " + total2 + " ms");
+		System.out.println("\nTime: " + total2 + " ns");
 		
 		int b[] = new int [size];
 		int j = 0;
@@ -112,14 +111,15 @@ public static void main (String[] args) {
 		System.out.println("\nSorted Descending:");
 		
 		   
-		long start3 = System.currentTimeMillis();
-		test.quicksort(test1, 0, size - 1);
-		long end3= System.currentTimeMillis();
+		long start3 = System.nanoTime();
+		test.quicksort(b, 0, size - 1);
+		long end3= System.nanoTime();
 		long total3 = end3 - start3;
 		  
-		printelements(test1);
-		System.out.println("\nTime: " + total3 + " ms");
-		
+		printelements(b);
+ 
+		System.out.println("\nTime: " + total3 + " ns"); 
+		//System.out.println(b.length+" nth element = " + b[b.length - 1]); 
 		
 	}
 	

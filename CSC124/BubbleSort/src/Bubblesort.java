@@ -3,22 +3,29 @@
 import java.util.Random;
 
 
-public class Bubblesort {
-   public void sort(int[] A){
-	   for(int i=0; i<=A.length; i++){
-		   for(int j = A.length-1;j >= i+1; j--){
-			   if (A[j] < A[j-1]){
+public class Bubblesort 
+{
+   
+  public void sort(int[] A)
+  {
+	   for(int i = 0; i <= A.length; i++)
+             {
+		   for(int j = A.length - 1;j >= i + 1; j--)
+                       {
+			   if (A[j] < A[j - 1])
+ 			     {
 				   int v = A[j]; 
-				   int z = A[j-1];
+				   int z = A[j - 1];
 				   A[j] = z;
-				   A[j-1] =v;
-			   }
-		   }
-	   }
+				   A[j - 1] =v;
+			     }
+		       }
+	     }
    }
 
 
-public static void main (String[] args) {
+          public static void main (String[] args) 
+          {
 	 
 		Bubblesort test = new Bubblesort();
 		Random ran = new Random();
@@ -30,7 +37,9 @@ public static void main (String[] args) {
 		
 		
 		System.out.println("Random:"); 
-		for(int i = 0; i < size; i++) {
+		
+                for(int i = 0; i < size; i++) 
+                {
 			test1[i] = ran.nextInt(100);
 			System.out.print(" " +test1[i]);
 		}
@@ -58,7 +67,9 @@ public static void main (String[] args) {
 		
 		System.out.println("");
 		System.out.println("Descending");
-		for(int i = test1.length-1; i >= 0; i--) {
+		
+		for(int i = test1.length - 1; i >= 0; i--) 
+                {
 			b[j] = test1[i];
 			System.out.print(" "+ b[j]);
 			j++;
@@ -72,7 +83,7 @@ public static void main (String[] args) {
 		   
 		long start3 = System.currentTimeMillis();
 		test.sort(test1);
-		long end3= System.currentTimeMillis();
+		long end3 = System.currentTimeMillis();
 		long total3 = end3 - start3;
 		  
 		printelements(test1);
@@ -81,11 +92,13 @@ public static void main (String[] args) {
 		
 	}
 	
-	public static void printelements (int[] array) {
-		for(int i = 0; i < array.length; i++) {
+	public static void printelements (int[] array)
+        {
+		for(int i = 0; i < array.length; i++) 
+                {
 			System.out.print(" " + array[i]);
 		} 
 	}
 	      
-	}
+}
  
